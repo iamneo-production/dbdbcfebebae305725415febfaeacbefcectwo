@@ -1,4 +1,4 @@
-package springapp.src.controller;
+package home.coder.project.workspace.springapp.src.controller;
 
 import springapp.src.model.Medicine;
 import org.springframework.web.bind.annotation.*;
@@ -23,12 +23,12 @@ public class MedicineController {
     }
 
     @PutMapping("/{medicineId}")
-    public boolean updateMedicine(@PathVariable int medicineId, @RequestBody Medicine updatedMedicine) {
+    public Map<Integer,Medicine> updateMedicine(@PathVariable int medicineId, @RequestBody Medicine updatedMedicine) {
         if (pharmacySystem.containsKey(medicineId)) {
             updatedMedicine.setMedicineId(medicineId);
             pharmacySystem.put(medicineId, updatedMedicine);
-            return true; // Successfully updated
+             // Successfully updated
         }
-        return false; // Medicine not found
+        return pharmacySystem; // Medicine not found
     }
 }

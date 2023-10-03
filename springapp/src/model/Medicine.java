@@ -1,4 +1,4 @@
-package springapp.src.model;
+package home.coder.project.workspace.springapp.src.model;
 
 public class Medicine {
     private int medicineId;
